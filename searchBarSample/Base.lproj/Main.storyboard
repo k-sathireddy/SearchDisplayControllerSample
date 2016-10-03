@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="searchBarSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Serach View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ0-4r-ELN">
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="Wf6-io-WtT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gHH-Lr-FDD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TuU-cp-FJq"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="frH-86-wiW"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mpv-Ij-8Ld">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eoA-wq-UVs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4IZ-TU-b4u"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mpv-Ij-8Ld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FAi-Yk-iw2"/>
+                            <constraint firstItem="gHH-Lr-FDD" firstAttribute="top" secondItem="CQ0-4r-ELN" secondAttribute="bottom" constant="1" id="JKU-dz-NMo"/>
+                            <constraint firstAttribute="trailing" secondItem="CQ0-4r-ELN" secondAttribute="trailing" id="LLa-Vr-lhT"/>
+                            <constraint firstItem="Mpv-Ij-8Ld" firstAttribute="top" secondItem="gHH-Lr-FDD" secondAttribute="bottom" constant="1" id="Pi6-Ca-wiQ"/>
+                            <constraint firstItem="CQ0-4r-ELN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SAg-91-mtv"/>
+                            <constraint firstItem="CQ0-4r-ELN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ULI-TQ-nwA"/>
+                            <constraint firstAttribute="trailing" secondItem="gHH-Lr-FDD" secondAttribute="trailing" id="g9v-zt-KFq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mpv-Ij-8Ld" secondAttribute="bottom" id="kDq-Jd-Ra7"/>
+                            <constraint firstItem="gHH-Lr-FDD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIC-EB-byG"/>
+                            <constraint firstAttribute="trailing" secondItem="Mpv-Ij-8Ld" secondAttribute="trailing" id="ozo-VG-s43"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countriesTableView" destination="Mpv-Ij-8Ld" id="11y-ut-P7o"/>
+                        <outlet property="countrySerachBar" destination="gHH-Lr-FDD" id="5NP-Cd-TQ2"/>
+                        <outlet property="headingLabel" destination="CQ0-4r-ELN" id="uef-3F-hkH"/>
+                        <outlet property="searchDisplayController" destination="UVr-d5-Awc" id="fpZ-Bk-4qy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="a9e-zc-qCe">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="SPh-Zr-Xnb"/>
+                        <outlet property="searchBar" destination="gHH-Lr-FDD" id="Mtp-9f-Cdu"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="DKJ-RD-56l"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="vLk-fI-Fzr"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="BIW-Jr-yKb"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="UVr-d5-Awc">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="QXw-pZ-Gmt"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="7Hl-RT-oAC"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="2zv-Lu-TC6"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Jpz-iT-jwC"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-93.5" y="-73.5"/>
+        </scene>
+    </scenes>
+</document>
