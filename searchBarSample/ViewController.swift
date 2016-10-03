@@ -29,9 +29,8 @@ class ViewController: UIViewController,UISearchDisplayDelegate, UISearchBarDeleg
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-         UIView.animate(withDuration: 1.0, animations: { () -> Void in }) { (completed) -> Void in
-         self.countrySerachBar.becomeFirstResponder()
-        }
+        
+        self.countrySerachBar.becomeFirstResponder()
     }
     
 
